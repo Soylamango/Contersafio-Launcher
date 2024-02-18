@@ -78,11 +78,11 @@ ipcMain.on('new-status-discord', async () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Luxfiro Studios',
+                details: 'By: Contersafio Launcher',
                 state: 'En el Menú principal',
                 assets: {
-                    large_image: 'logo1',
-                    large_text: 'Luxfiro Studios',
+                    large_image: '',
+                    large_text: 'Jugando a contersafio',
                 },
                 instance: true,
                 timestamps: {
