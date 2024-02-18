@@ -1,8 +1,15 @@
+.home-content {
+    resize: none;
+    overflow: hidden;
+}
+
+
 .logohome {
     height: 39%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     
 }
 .bottom-bar-home {
@@ -18,7 +25,8 @@
 }
 
 .player-head {
-    margin: auto 30px;
+    margin: auto 15px;
+    margin-top: 10px;
     background-image: url("../../images/default/setve.png");
     background-size: cover;
     background-position: center;
@@ -30,6 +38,7 @@
     border-radius: 15px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
+    margin-left: 20px;
     margin-right: 15px;
 }
 
@@ -77,10 +86,10 @@
     height: 37px;
     border-radius: 20px;
     border: none;
-    background: rgb(81,236,87);
-    background: radial-gradient(circle, rgba(81,236,87,1) 0%, rgba(71,189,90,1) 100%);
+    background: rgb(255, 69, 69);
+    background: radial-gradient(circle, rgb(255, 69, 69) 0%, rgba(255, 69, 69) 100%);
     font: normal normal bold 20px/25px Poppins;
-    color: #121212;
+    color: #000000;
     margin: 15px 0;
     transition: 0.2s ease-out;
     cursor: pointer;
@@ -88,7 +97,7 @@
 }
 
 .play-btn:hover {
-    box-shadow: 0 0 15px #38a14a;
+    box-shadow: 0 0 15px rgb(255, 69, 69);
     transform: scale(1.05);
 }
 
@@ -133,7 +142,8 @@
 .news-list {
     position: relative;
     overflow: auto;
-    width: 100%;
+
+
 }
 
 .news-list::-webkit-scrollbar {
@@ -148,6 +158,7 @@
     backdrop-filter: blur(30px);
     margin: auto;
     max-width: 1500px;
+    margin-bottom: 10px;
 }
 
 .news-block:hover {
@@ -172,7 +183,7 @@
 
 .title {
     position: absolute;
-    font: normal normal bold 27px/40px Poppins;
+    font: normal normal bold 17px/30px Poppins;
     letter-spacing: 0px;
     color: #E1E1E1;
     display: flex;
@@ -252,13 +263,14 @@
 
 .server {
     position: relative;
-    width: 100%;
+    width: 70%;
     height: 75px;
     background-color: #29292985;
-    border-radius: 10px;
+    border-radius: 47px;
     transition: ease-in-out 0.2s;
     backdrop-filter: blur(30px);
     min-width: 350px;
+    left: 200px;
 }
 
 .server:hover {
@@ -358,7 +370,7 @@
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
-    height: 540px;
+    height: 350px;
 }
 
 .socialLink {
@@ -483,6 +495,129 @@
     border-radius: 4px;
     display: inline-block;
   }
+
+.avenir {
+    font: normal normal 19px/29px Poppins;
+    color: #E1E1E1
+}
+.suivre{
+    display: block;
+    position: relative;
+    color: #ffffff;
+    background-color: #29292985;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    font: normal normal bold 25px/30px Poppins;
+    margin: 30px 0px 10px 0px;
+    min-width: 350px;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 540px;
+}
+
+.socialLink {
+    position: relative;
+}
+
+.socialLinkBtn {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    background-color: #1a1a1ac0;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    margin: 1rem 0;
+    transition: ease-in-out 0.2s;
+}
+
+.socialLinkBtn:hover {
+    background-color: #111111e1;
+    cursor: pointer;
+}
+
+.socialLinkMedia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    margin: 8px 1rem;
+}
+
+.socialLinkBtn span {
+    margin: 8px 0;
+}
+
+.DiscordMedia {
+    content: url(../../images/logo/social/discord.svg);
+    top: 3px;
+}
+
+.TwitterMedia {
+    content: url(../../images/logo/social/twitter.svg);
+    top: 3px;
+}
+
+.GithubMedia {
+    content: url(../../images/logo/social/github.png);
+    top: 2px;
+}
+
+.background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .background-video video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .content video {
+    width: 100%;
+    display: block;
+  }
+  .content:before {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
+  }
+  #mute {
+    cursor:pointer;
+    padding: 10px 20px;
+    background:#000;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
   .bottom-bar-home {
     background: rgba(18, 18, 18, 0.5);
   }

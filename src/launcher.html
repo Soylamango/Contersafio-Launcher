@@ -23,86 +23,85 @@
                     <span></span>
                 </div>
             </div>
-            <div class="preload-title">Chargement en cours...</div>
+            <div class="preload-title">Conectando al launcher...</div>
         </div>
 
         <div class="panels"></div>
         <script src="assets/js/launcher.js" type="module"></script>
-        </div>
     </body>
     <script>
-      var videoContainer = document.getElementById('videoContainer');
-      var nextVideo;
-      var videoObjects = [document.createElement('video'), document.createElement('video')];
-      var videoIndices = [0, 1, 2, 3];
-      var nextActiveIndex = 0;
-
-      videoObjects[0].inx = 0; // Set index
-      videoObjects[1].inx = 1;
-
-      initVideoElement(videoObjects[0]);
-      initVideoElement(videoObjects[1]);
-
-      videoObjects[0].autoplay = true;
-      videoObjects[0].src = getVideoSource(videoIndices[nextActiveIndex]);
-      videoContainer.appendChild(videoObjects[0]);
-
-      videoObjects[1].style.display = 'none';
-      videoContainer.appendChild(videoObjects[1]);
-
-      function initVideoElement(video) {
-        video.playsinline = true;
-        video.muted = false;
-        video.preload = 'auto';
-
-        video.onplaying = function (e) {
-
-          nextActiveIndex = ++nextActiveIndex % videoIndices.length;
-
-          if (this.inx == 0) nextVideo = videoObjects[1];
-          else nextVideo = videoObjects[0];
-
-          nextVideo.src = getVideoSource(videoIndices[nextActiveIndex]);
-          nextVideo.pause();
-        };
-
-        video.onended = function (e) {
-          this.style.display = 'none';
-          nextVideo.style.display = 'block';
-          nextVideo.play();
-        };
-      }
-
-      function getVideoSource(index) {
-        return 'assets/images/background/videos/Final_' + (index + 1) + '.mp4'; // Assuming video1.mp4, video2.mp4, ...
-      }
-
-function muteonload() {
-      var muteButton = document.getElementById('button');
-      var muted = localStorage.getItem('muted');
-      if (muted == 'true') {
-        videoObjects[0].muted = true;
-        videoObjects[1].muted = true;
-        muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Unmute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/unmute.svg"></button>`;
-      } else {
-        videoObjects[0].muted = false;
-        videoObjects[1].muted = false;
-        muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Mute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/mute.svg"></button>`;
-      }
-    };
-     function muteBtn() {
+        var videoContainer = document.getElementById('videoContainer');
+        var nextVideo;
+        var videoObjects = [document.createElement('video'), document.createElement('video')];
+        var videoIndices = [0, 1, 2, 3];
+        var nextActiveIndex = 0;
+  
+        videoObjects[0].inx = 0; // Set index
+        videoObjects[1].inx = 1;
+  
+        initVideoElement(videoObjects[0]);
+        initVideoElement(videoObjects[1]);
+  
+        videoObjects[0].autoplay = true;
+        videoObjects[0].src = getVideoSource(videoIndices[nextActiveIndex]);
+        videoContainer.appendChild(videoObjects[0]);
+  
+        videoObjects[1].style.display = 'none';
+        videoContainer.appendChild(videoObjects[1]);
+  
+        function initVideoElement(video) {
+          video.playsinline = true;
+          video.muted = false;
+          video.preload = 'auto';
+  
+          video.onplaying = function (e) {
+  
+            nextActiveIndex = ++nextActiveIndex % videoIndices.length;
+  
+            if (this.inx == 0) nextVideo = videoObjects[1];
+            else nextVideo = videoObjects[0];
+  
+            nextVideo.src = getVideoSource(videoIndices[nextActiveIndex]);
+            nextVideo.pause();
+          };
+  
+          video.onended = function (e) {
+            this.style.display = 'none';
+            nextVideo.style.display = 'block';
+            nextVideo.play();
+          };
+        }
+  
+        function getVideoSource(index) {
+          return 'assets/images/background/videos/Final_' + (index + 1) + '.mp4'; // Assuming video1.mp4, video2.mp4, ...
+        }
+  
+  function muteonload() {
         var muteButton = document.getElementById('button');
-        if (videoObjects[0].muted) {
-          videoObjects[0].muted = false;
-          videoObjects[1].muted = false;
-          muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Mute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/mute.svg"></button>`;
-          localStorage.setItem('muted', 'false');
-        } else {
+        var muted = localStorage.getItem('muted');
+        if (muted == 'true') {
           videoObjects[0].muted = true;
           videoObjects[1].muted = true;
           muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Unmute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/unmute.svg"></button>`;
-          localStorage.setItem('muted', 'true');
+        } else {
+          videoObjects[0].muted = false;
+          videoObjects[1].muted = false;
+          muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Mute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/mute.svg"></button>`;
         }
-    };
-    </script>
-</html> 
+      };
+       function muteBtn() {
+          var muteButton = document.getElementById('button');
+          if (videoObjects[0].muted) {
+            videoObjects[0].muted = false;
+            videoObjects[1].muted = false;
+            muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Mute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/mute.svg"></button>`;
+            localStorage.setItem('muted', 'false');
+          } else {
+            videoObjects[0].muted = true;
+            videoObjects[1].muted = true;
+            muteButton.innerHTML = `<button id="muteButton" class="mutebtn" onclick="muteBtn()"> Unmute <img id="muteimg" style="width: 25px;margin-left: 6px;vertical-align: middle;" src="assets/images/logo/unmute.svg"></button>`;
+            localStorage.setItem('muted', 'true');
+          }
+      };
+      </script>
+  </html> 

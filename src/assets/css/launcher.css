@@ -11,7 +11,9 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), black no-repeat center center scroll;
+    background: linear-gradient(#00000066, #00000066), url("../images/background/background.jpg") black no-repeat center center scroll;
+    resize: none;
+    background-size:cover;
 }
 
 img {
@@ -21,8 +23,7 @@ img {
 
 .dragbar {
     position: fixed;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(30px);
+    background: #00000080;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -61,10 +62,8 @@ img {
     background: #e21212;
 }
 
-.icon-minimize:hover,
-.icon-restore-down:hover,
-.icon-maximize:hover {
-    background-color: #0000009d;
+.icon-m.icon-minimize:hover {
+    background-color: #ffffff;
 }
 
 .icon-close:before,
@@ -149,17 +148,12 @@ img {
     opacity: 0;
     z-index: 0;
     pointer-events: none;
-    transition: opacity .2s;
 }
 
 .active {
     opacity: 1;
     z-index: 1;
     pointer-events: all;
-}
-
-.transition {
-    opacity:0;
 }
 
 .rotation {
