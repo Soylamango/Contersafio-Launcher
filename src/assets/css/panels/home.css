@@ -1,32 +1,46 @@
-.home-content {
-    resize: none;
-    overflow: hidden;
-}
-
-
-.logohome {
-    height: 39%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    
-}
-.bottom-bar-home {
+.action-bar {
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    bottom: 46%;
+    width: 30%;
     height: 70px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    background: rgba(0, 0, 0, 0.2);
-    display: flex;
-    backdrop-filter: blur(30px);
+    left: 9.5%;
+}
+
+.server-informations {
+    position: absolute;
+    width: 500px;
+    height: 150px;
+    top: 20%;
+    left: 5%;
+}
+
+.server-description {
+    position: absolute;
+    top: 27%;
+    color: #ffffff;
+    font: normal normal bold 15px/25px Poppins;
+    font-weight: 300;
+    width: 600px;
+    left: 13.5%;
+}
+
+.big-title {
+    position: absolute;
+    font: normal normal bold 85px/25px Poppins;
+    font-weight: 900;
+    letter-spacing: 5px;
+    bottom: 50%;
+    left: 13%;
+    width: 500px;
+    height: 80px;
+    color: #ffffff;
 }
 
 .player-head {
-    margin: auto 15px;
-    margin-top: 10px;
+    margin: auto 35px;
+    margin-top: 30px;
     background-image: url("../../images/default/setve.png");
     background-size: cover;
     background-position: center;
@@ -40,39 +54,44 @@
     cursor: pointer;
     margin-left: 20px;
     margin-right: 15px;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .player-head:hover {
-    border-radius: 5px;
-    transition: 0.2s ease-in-out;
+    border: solid #ffffff 9px;
+    transition: all 0.3s cubic-bezier(1, 0.46, 0, 1.29);
 }
 
 .settings-btn {
     position: absolute;
+    color: #000000;
     top: 10px;
-    right: 30px;
+    right: 5%;
     text-align: center;
     height: 50px;
+    width: 50px;
+    background: #ffffff;
     border: none;
-    border-radius: 15px;
-    transition: ease-in-out 0.2s;
-    background-color: #00bd7b00;
+    border-radius: 100px;
+    transition: all 0.3s cubic-bezier(1, 0.46, 0, 1.29);
     cursor: pointer;
 }
 
 .settings-btn:hover {
-    border-radius: 5px;
-    transition: ease-in-out 0.2s;
-    transform: rotate(180deg);
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(1, 0.46, 0, 1.29);
 }
 
 .icon-settings:before {
-    font-size: 40px;
+    font-size: 30px;
+    text-align: match-parent;
 }
 
 .play-element {
     position: absolute;
-    left: 50%;
+    left: 39%;
+    top: -5px;
     transform: translate(-50%);
     height: 100%;
     color: #F1F1F1;
@@ -81,23 +100,23 @@
 }
 
 .play-btn {
+    border: 3px solid rgb(155, 155, 255);
+    background-color: rgba(0, 0, 0, 0);
     top: 10px;
-    width: 160px;
-    height: 37px;
-    border-radius: 20px;
+    width: 281px;
+    height: 50px;
+    border-radius: 100px;
     border: none;
-    background: rgb(255, 69, 69);
-    background: radial-gradient(circle, rgb(255, 69, 69) 0%, rgba(255, 69, 69) 100%);
+    background: #ffffff;
     font: normal normal bold 20px/25px Poppins;
     color: #000000;
     margin: 15px 0;
+    cursor: crosshair;
     transition: 0.2s ease-out;
-    cursor: pointer;
-    
 }
 
 .play-btn:hover {
-    box-shadow: 0 0 15px rgb(255, 69, 69);
+    border-radius: 15px;
     transform: scale(1.05);
 }
 
@@ -106,7 +125,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
 }
 
 .text-download,
@@ -129,21 +147,23 @@
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: #00bd7a;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
 .body-home {
     display: flex;
-    height: calc(100% - 150px);
+    height: 78vh;
     margin: 3rem 2rem;
 }
 
 .news-list {
     position: relative;
     overflow: auto;
-
-
+    width: 50%;
+    height: 50%;
+    top: 65%;
+    left: 8%;
 }
 
 .news-list::-webkit-scrollbar {
@@ -152,18 +172,13 @@
 
 .news-block {
     margin-bottom: 1rem;
-    border-radius: 10px 10px 10px 10px;
-    background-color: #29292985;
-    transition: ease-in-out 0.2s;
-    backdrop-filter: blur(30px);
-    margin: auto;
-    max-width: 1500px;
-    margin-bottom: 10px;
+    transition: opacity 1s;
+    opacity: .4;
 }
 
 .news-block:hover {
-    backdrop-filter: blur(30px);
-    background-color: #292929b7;
+    transition: opacity 1s;
+    opacity: 1;
 }
 
 .opacity-1 {
@@ -176,14 +191,14 @@
     left: 0px;
     width: 100%;
     height: 87px;
-
+    background-color: #292929;
     border-radius: 10px 10px 0px 0px;
-
+    transition: color .2s, filter .2s;
 }
 
 .title {
     position: absolute;
-    font: normal normal bold 17px/30px Poppins;
+    font: normal normal bold 27px/40px Poppins;
     letter-spacing: 0px;
     color: #E1E1E1;
     display: flex;
@@ -233,13 +248,15 @@
 .bbWrapper {
     position: relative;
     padding: 20px;
-    background-color: #1f1f1f34;
+    background-color: #1f1f1f;
     font-family: Poppins;
     font-size: 13px !important;
     color: #E1E1E1;
     text-decoration: none;
     border-radius: 0px 0px 10px 10px;
     transition: color .2s;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .news-author {
@@ -254,23 +271,20 @@
 
 .info-list {
     position: relative;
-    width: 65vh;
-    padding-left: 1rem;
+    width: 30%;
+    left: 20%;
     background: none;
-    height: 100%;
-    display: grid;
 }
 
 .server {
     position: relative;
-    width: 70%;
+    width: 100%;
     height: 75px;
-    background-color: #29292985;
-    border-radius: 47px;
+    background-color: #292929;
+    border-radius: 10px;
     transition: ease-in-out 0.2s;
-    backdrop-filter: blur(30px);
-    min-width: 350px;
-    left: 200px;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .server:hover {
@@ -284,7 +298,6 @@
     height: 45px;
     top: 15px;
     left: 15px;
-    border-radius: 15%;
 }
 
 .name {
@@ -320,7 +333,7 @@
     right: 14px;
     width: 49px;
     height: 33px;
-    background-color: #03030383;
+    background-color: #262626;
     border-radius: 4px;
     transition: background-color .2s;
 }
@@ -352,298 +365,256 @@
     background-color: #FF0409;
 }
 
-.avenir {
-    font: normal normal 19px/29px Poppins;
-    color: #E1E1E1
+.background-video video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.content video {
+  width: 100%;
+  display: block;
+}
+.content:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
+}
+#mute {
+  cursor:pointer;
+  padding: 10px 20px;
+  background:#000;
+  color: #fff;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.avenir {
+  font: normal normal 19px/29px Poppins;
+  color: #E1E1E1
+}
 .suivre{
-    display: block;
-    position: relative;
-    color: #ffffff;
-    background-color: #29292985;
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-    font: normal normal bold 25px/30px Poppins;
-    margin: 30px 0px 10px 0px;
-    min-width: 350px;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    height: 350px;
+  display: block;
+  position: relative;
+  color: #ffffff;
+  background-color: #29292985;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  font: normal normal bold 25px/30px Poppins;
+  margin: 30px 0px 10px 0px;
+  min-width: 350px;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 540px;
 }
 
 .socialLink {
-    position: relative;
+  position: relative;
 }
 
 .socialLinkBtn {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    background-color: #1a1a1ac0;
-    border-radius: 10px;
-    width: 100%;
-    height: 50px;
-    margin: 1rem 0;
-    transition: ease-in-out 0.2s;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  background-color: #1a1a1ac0;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  margin: 1rem 0;
+  transition: ease-in-out 0.2s;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.164);
 }
 
 .socialLinkBtn:hover {
-    background-color: #111111e1;
-    cursor: pointer;
+  background-color: #111111e1;
+  cursor: pointer;
 }
 
 .socialLinkMedia {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    margin: 8px 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin: 8px 1rem;
 }
 
 .socialLinkBtn span {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .DiscordMedia {
-    content: url(../../images/logo/social/discord.svg);
-    top: 3px;
+  content: url(../../images/logo/social/discord.svg);
+  top: 3px;
 }
 
 .TwitterMedia {
-    content: url(../../images/logo/social/twitter.svg);
-    top: 3px;
+  content: url(../../images/logo/social/twitter.svg);
+  top: 3px;
 }
 
 .GithubMedia {
-    content: url(../../images/logo/social/github.png);
-    top: 2px;
-}
-
-.YoutubeMedia {
-    content: url(../../images/logo/social/youtube.png);
-    top: 2px;
-}
-
-.InstagramMedia {
-    content: url(../../images/logo/social/instagram.png);
-    top: 3px;
-}
-
-.TwitchMedia {
-    content: url(../../images/logo/social/twitch.svg);
-    top: 2px;
-}
-
-.WebsiteMedia {
-    content: url(../../images/logo/social/website.png);
-    top: 2px;
+  content: url(../../images/logo/social/github.png);
+  top: 2px;
 }
 
 .background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .background-video video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  .content video {
-    width: 100%;
-    display: block;
-  }
-  .content:before {
-    content: '';
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
-  }
-  #mute {
-    cursor:pointer;
-    padding: 10px 20px;
-    background:#000;
-    color: #fff;
-    border-radius: 4px;
-    display: inline-block;
-  }
-
-.avenir {
-    font: normal normal 19px/29px Poppins;
-    color: #E1E1E1
-}
-.suivre{
-    display: block;
-    position: relative;
-    color: #ffffff;
-    background-color: #29292985;
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-    font: normal normal bold 25px/30px Poppins;
-    margin: 30px 0px 10px 0px;
-    min-width: 350px;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    height: 540px;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
-.socialLink {
-    position: relative;
+.background-video video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.content video {
+  width: 100%;
+  display: block;
+}
+.content:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
+}
+#mute {
+  cursor:pointer;
+  padding: 10px 20px;
+  background:#000;
+  color: #fff;
+  border-radius: 4px;
+  display: inline-block;
 }
 
+.instance-popup {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000000b3;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px; /* Redondear bordes de la instancia emergente */
+  
+}
+
+.instances-tab {
+  position: relative;
+  background: var(--background);
+  border-radius: 10px;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+}
+
+.close-popup {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  right: 10px;
+  background: var(--shadow);
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.instances-tab p {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.instance-elements {
+  background: var(--background-element);
+  text-align: center;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.instance-elements:hover {
+  background: var(--element-color);
+  border-radius: 10px; /* Redondear bordes en hover */
+}
+
+.active-instance {
+  background: var(--element-color);
+  border-radius: 10px; /* Redondear bordes del activo */
+}
+.bottom-bar-home {
+  background: rgba(18, 18, 18, 0.5);
+}
+.settings-btn {
+  /* transition: ease-in-out 0.2s; */
+  transition: ease-in-out 0.5s;
+}
+.settings-btn:hover {
+  /* transition: ease-in-out 0.2s; */
+  transition: ease-in-out 0.5s;
+}
+.news-block {
+  background: rgba(18, 18, 18, 0.5);
+}
+.bbWrapper {
+  background: rgba(18, 18, 18, 0.5);
+}
+.server {
+  background: rgba(18, 18, 18, 0.5);
+}
+.etat-text {
+  background: rgba(18, 18, 18, 0.5);
+}
+.suivre {
+  background: rgba(18, 18, 18, 0.5);
+}
 .socialLinkBtn {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    background-color: #1a1a1ac0;
-    border-radius: 10px;
-    width: 100%;
-    height: 50px;
-    margin: 1rem 0;
-    transition: ease-in-out 0.2s;
-}
-
-.socialLinkBtn:hover {
-    background-color: #111111e1;
-    cursor: pointer;
-}
-
-.socialLinkMedia {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    margin: 8px 1rem;
-}
-
-.socialLinkBtn span {
-    margin: 8px 0;
-}
-
-.DiscordMedia {
-    content: url(../../images/logo/social/discord.svg);
-    top: 3px;
-}
-
-.TwitterMedia {
-    content: url(../../images/logo/social/twitter.svg);
-    top: 3px;
-}
-
-.GithubMedia {
-    content: url(../../images/logo/social/github.png);
-    top: 2px;
-}
-
-.background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
+  background: rgba(18, 18, 18, 0.5);
   }
-
-  .background-video video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-  .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  .content video {
-    width: 100%;
-    display: block;
-  }
-  .content:before {
-    content: '';
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
-  }
-  #mute {
-    cursor:pointer;
-    padding: 10px 20px;
-    background:#000;
-    color: #fff;
-    border-radius: 4px;
-    display: inline-block;
-  }
-
-  .bottom-bar-home {
-    background: rgba(18, 18, 18, 0.5);
-  }
-  .settings-btn {
-    /* transition: ease-in-out 0.2s; */
-    transition: ease-in-out 0.5s;
-  }
-  .settings-btn:hover {
-    /* transition: ease-in-out 0.2s; */
-    transition: ease-in-out 0.5s;
-  }
-  .news-block {
-    background: rgba(18, 18, 18, 0.5);
-  }
-  .bbWrapper {
-    background: rgba(18, 18, 18, 0.5);
-  }
-  .server {
-    background: rgba(18, 18, 18, 0.5);
-  }
-  .etat-text {
-    background: rgba(18, 18, 18, 0.5);
-  }
-  .suivre {
-    background: rgba(18, 18, 18, 0.5);
-  }
-  .socialLinkBtn {
-    background: rgba(18, 18, 18, 0.5);
-    }

@@ -1,11 +1,43 @@
 /**
- * @author soyrayku
+ * @author MenakiVT
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
 
 const { app, ipcMain, nativeTheme } = require('electron');
 const { Microsoft } = require('minecraft-java-core');
 const { autoUpdater } = require('electron-updater')
+const clientId = '1216217682894913626';
+ const DiscordRPC = require('discord-rpc');
+ const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+ 
+ DiscordRPC.register(clientId);
+
+ async function setActivity() {
+    if (!RPC) return;
+     const newLocal = `link xd`;
+    RPC.setActivity({
+        details: 'By: Bruchita Studios',
+        state: 'Instancia Contersafio 3 ',
+        startTimestamp: Date.now(),
+        largeImageKey: 'https://media.discordapp.net/attachments/1201597666379964579/1216219110950834176/dd_-_copia.jpg?ex=65ff9750&is=65ed2250&hm=e9c8b6089281fe5993234e758084d3e6c6f8dfca2c331befd316917b3f26c650&=&format=webp&width=473&height=473',
+        largeImageText: `Contersafio 3 Launcher`,
+        instance: false,
+        buttons: [
+{
+            }
+        ]
+    });
+ };
+
+RPC.on('ready', async () => {
+    setActivity();
+
+    setInterval(() => {
+        setActivity();
+    }, 86400 * 1000);
+});
+
+RPC.login({ clientId }).catch(err => console.error(err));
 
 const path = require('path');
 const fs = require('fs');
@@ -73,18 +105,17 @@ const pkg = require('../package.json');
 let startedAppTime = Date.now();
 
 ipcMain.on('new-status-discord', async () => {
-    client.login({ clientId: '1197959949557448704' });
+    client.login({ clientId: '1207516304857235546' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Contersafio Launcher',
+                details: 'By: Luxfiro Client',
                 state: 'En el Menú principal',
                 assets: {
-                    large_image: '',
-                    large_text: 'Jugando a contersafio',
+                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
+                    large_text: 'Luxfiro Client',
                 },
-                instance: true,
                 timestamps: {
                     start: startedAppTime
                 }
@@ -97,18 +128,17 @@ ipcMain.on('new-status-discord', async () => {
 ipcMain.on('new-status-discord-jugando', async (event, status) => {
     console.log(status)
     if(client) await client.destroy();
-    client.login({ clientId: '1197959949557448704' });
+    client.login({ clientId: '1207516304857235546' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Luxfiro Cliente',
-                state: 'Jugando',
+                details: 'By: Luxfiro Client',
+                state: status,
                 assets: {
-                    large_image: 'logo1',
-                    large_text: 'Luxfiro Studios',
+                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
+                    large_text: 'Luxfiro Client',
                 },
-                instance: true,
                 timestamps: {
                     start: startedAppTime
                 }
@@ -120,21 +150,20 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
 ipcMain.on('delete-and-new-status-discord', async () => {
     if(client) client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '1197959949557448704' });
+    client.login({ clientId: '1207516304857235546' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Luxfiro Studios',
-                state: 'En el Menú principal',
+                details: 'By: Contersafio 3',
+                state: 'Jugando Contersafio 3 Remake',
                 assets: {
-                    large_image: 'logo1',
-                    large_text: 'Luxfiro Studios',
+                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
+                    large_text: 'Contersafio Launcher',
                 },
-                instance: true,
-                timestamps: {
-                    start: startedAppTime
-                }
+                    timestamps: {
+                        start: startedAppTime
+                    }
             },
         });
     });

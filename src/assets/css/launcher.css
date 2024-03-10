@@ -11,9 +11,7 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
-    background: linear-gradient(#00000066, #00000066), url("../images/background/background.jpg") black no-repeat center center scroll;
-    resize: none;
-    background-size:cover;
+    background: linear-gradient(#00000066, #00000066), url("../images/background/light.jpg") black no-repeat center center scroll;
 }
 
 img {
@@ -62,8 +60,10 @@ img {
     background: #e21212;
 }
 
-.icon-m.icon-minimize:hover {
-    background-color: #ffffff;
+.icon-minimize:hover,
+.icon-restore-down:hover,
+.icon-maximize:hover {
+    background-color: #0000009d;
 }
 
 .icon-close:before,

@@ -1,37 +1,29 @@
 <div class="settings-content">
     <div class="tabs-settings-btn">
-        <button class="tab-btn-css tab-btn active-tab-btn default-tab-btn">cuentas</button>
+        <button class="tab-btn-css tab-btn active-tab-btn default-tab-btn">Cuentas</button>
         <button class="tab-btn-css tab-btn">Java</button>
-        <button class="tab-btn-css tab-btn">Resolucion</button>
         <button class="tab-btn-css tab-btn">Launcher</button>
-        <button class="tab-btn-css save-tabs-btn">Inicio</button>
+        <button class="tab-btn-css save-tabs-btn">Guardar</button>
     </div>
 
     <div class="tabs-settings-content active-tab-content">
         <div class="center-align">
-            <div class="title-settings">cuentas</div>
+            <button class="add-account">Agregar una Cuenta</button>
             <div class="accounts"></div>
-            <button class="add-account">Agregar una cuenta +</button>
         </div>
     </div>
 
     <div class="tabs-settings-content">
         <div class="settings-content-scroll">
-            <div class="title-settings">Parámetro de su RAM.</div>
+            <div class="title-settings">Configura tu RAM.</div>
             <div class="java-settings">
                 <div class="information">
-                    Definición de la RAM asignada a tu juego, una cantidad mayor aumentará el rendimiento de
-                    tu juego.<br> Ten en cuenta que debes evitar agregar una cantidad demasiado grande, de lo contrario, puede
-                    causar pérdidas de rendimiento en su
-                    otras aplicaciones.
+                    Al configurar la RAM asignada a tu juego, una cantidad mayor aumentará el rendimiento de tu juego.<br> Tenga en cuenta que debe evitar agregar demasiado; de lo contrario, esto puede causar una pérdida de rendimiento en sus dispositivos
+                    o otras apps.
                     <br><br>
-                    <b>- RAM máxima:</b> Indica la cantidad total de RAM asignada a tu juego. Se recomienda
-                    no exceda el 50% de la cantidad total de RAM presente en su PC para que pueda funcionar
-                    correctamente. Si tu computadora
-                    tiene más de 8GB de RAM, recomendamos asignarle 3GB. Si su computadora tiene 4 GB o menos,
-                    no asigne más de 2 GB.<br><br>
-                    <b>- RAM mínima:</b> Indica la cantidad mínima de RAM asignada al iniciar tu juego.
-                    Se recomienda no poner más de 3GB para este valor. El valor típico es 1 GB.
+                    <b>- RAM Maxima :</b> Indica la cantidad total de RAM asignada a tu juego. Se recomienda no exceder el 50% de la cantidad total de RAM presente en tu PC para que pueda ejecutarse correctamente. Si tu computadora
+                    tiene más de 8GB de RAM, recomendamos asignarle 3GB. Si su computadora tiene 4 GB o menos, no le asigne más de 2 GB.<br><br>
+                    <b>- RAM Minima :</b> Indica la cantidad mínima de RAM asignada al iniciar tu juego, se recomienda no poner más de 3GB para este valor. El valor típico es 1 GB.
                 </div>
                 <div class="ram-info">
                     <div class="memory-slider" min="0.5" max="8" step="0.5">
@@ -47,83 +39,10 @@
                     </div>
 
                     <div class="ram-info-block">
-                        <b>Tienes un total de <span id="total-ram">0 Go</span> RAM.</b><br>
-                        <b>Tienes un total de <span id="free-ram">0 Go</span> RAM disponible.</b>
+                        <b>Tienes <span id="total-ram">0 Go</span> de RAM Instalada.</b><br>
+                        <b>Tienes <span id="free-ram">0 Go</span> de RAM disponible.</b>
                     </div>
                 </div>
-            </div>
-
-            <div class="title-settings">Ubicación de Java.</div>
-            <div class="java-settings">
-                <div class="information">
-                    El iniciador utiliza una versión integrada de Java.<br> Esta versión está disponible en
-                    directorio <span class="info-path"></span>.<br> sin embargo, puede especificar su propio ejecutable.
-                </div>
-                <input type="text" class="path" disabled />
-                <button class="path-button">Changer</button>
-                <button class="path-button-reset">Reset</button>
-                <input type="file" class="path-file" accept="application/octet-stream" />
-            </div>
-
-            <div class="title-settings">Parámetros de argumentos de Java.</div>
-            <div class="java-settings">
-                <div class="information">
-                    Los argumentos de Java se utilizan para establecer parámetros para tu juego.
-                </div>
-                <input type="text" class="args-settings" placeholder="Il est déconseillé de modifier ce paramètre." />
-            </div>
-        </div>
-    </div>
-
-    <div class="tabs-settings-content">
-        <div class="center-page">
-            <div class="title-settings">Configuración de resolución de Minecraft.</div>
-            <div class="java-settings">
-                <div class="information">
-                    Establezca una resolución personalizada o elija una de la lista según el tamaño
-                    de tu pantalla.
-                </div>
-                <div class="input-size-content">
-                    <div class="input-size">
-                        <input type="text" class="width-size input-settings">
-                        <div class="size-cross"></div>
-                        <input type="text" class="height-size input-settings">
-                        <div class="select-wrap icon-monitor">
-                            <select id="select" style="cursor:pointer" class="select">
-                                <option disabled selected value style="display: none">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <optgroup label="Ratio 4:3">
-                                    <option value="640 x 480">640 x 480</option>
-                                    <option value="800 x 600">800 x 600</option>
-                                    <option value="1024 x 768">1024 x 768</option>
-                                    <option value="1280 x 960">1280 x 960</option>
-                                    <option value="1280 x 1024">1280 x 1024</option>
-                                </optgroup>
-                                <optgroup label="Ratio 16:9">
-                                    <option value="854 x 480">854 x 480</option>
-                                    <option value="1280 x 720">1280 x 720</option>
-                                    <option value="1360 x 768">1360 x 768</option>
-                                    <option value="1600 x 900">1600 x 900</option>
-                                    <option value="1920 x 1080">1920 x 1080</option>
-                                </optgroup>
-                                <optgroup label="Ratio 16:10">
-                                    <option value="1280 x 768">1280 x 768</option>
-                                    <option value="1280 x 800">1280 x 800</option>
-                                    <option value="1440 x 900">1440 x 900</option>
-                                    <option value="1600 x 1024">1600 x 1024</option>
-                                    <option value="1680 x 1050">1680 x 1050</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="title-settings">Configuración de pantalla completa</div>
-            <div class="java-settings information">
-                Inicie el juego en pantalla completa:
-                <input type="checkbox" class="checkbox-settings" id="fullscreen"><label for="fullscreen">
-                    <div class="checkround"></div>
-                </label>
             </div>
         </div>
     </div>
@@ -131,32 +50,12 @@
     <div class="tabs-settings-content">
         <div class="center-page">
             <div class="title-settings">Configuración después de iniciar el juego.</div>
-            <div class="java-settings information">
-                <input type="checkbox" class="checkbox-settings" id="launcher-close"><label for="launcher-close">
-                    <div class="checkround"></div>
-                </label> Cierra el iniciador después de iniciar el juego.</br>
-                <input type="checkbox" class="checkbox-settings" id="launcher-close-all"><label
-                    for="launcher-close-all">
-                    <div class="checkround"></div>
-                </label>Cierra el juego si el iniciador está cerrado.</br>
-                <input type="checkbox" class="checkbox-settings" id="launcher-open"><label for="launcher-open">
-                    <div class="checkround"></div>
-                </label> Mantén el iniciador abierto después de iniciar el juego.
-            </div>
-            <div class="title-settings">Configuración de sonido.</div>
-            <div class="java-settings information">
-                Para silenciar el sonido del iniciador:
-                <div style="display: block;position: absolute;top: 12px;left: 272px;" id="button"><button
-                        id="muteButton" class="mutebtn" onclick="muteBtn()"> Mute <img id="muteimg"
-                            style="width: 25px;margin-left: 6px;vertical-align: middle;"
-                            src="assets/images/logo/mute.svg"></button></div>
-            </div>
-            <div class="title-settings">Configuración de conexión automática</div>
-            <div class="java-settings information">
-                Conéctese automáticamente al servidor:
-                <input type="checkbox" class="checkbox-settings" id="auto-connect"><label for="auto-connect">
-                    <div class="checkround"></div>
-                </label>
+            <div class="java-settings">
+                <div class="information">
+                    <input type="checkbox" class="checkbox-settings" id="launcher-close"><label for="launcher-close"><div class="checkround"></div></label> Cierra el iniciador después de iniciar el juego.</br>
+                    <input type="checkbox" class="checkbox-settings" id="launcher-close-all"><label for="launcher-close-all"><div class="checkround"></div></label> Cierra el juego si el iniciador está cerrado.</br>
+                    <input type="checkbox" class="checkbox-settings" id="launcher-open"><label for="launcher-open"><div class="checkround"></div></label> Mantén el iniciador abierto después de iniciar el juego.
+                </div>
             </div>
         </div>
     </div>
