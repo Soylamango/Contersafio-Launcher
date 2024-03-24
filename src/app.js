@@ -2,42 +2,42 @@
  * @author MenakiVT
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
-
-const { app, ipcMain, nativeTheme } = require('electron');
-const { Microsoft } = require('minecraft-java-core');
-const { autoUpdater } = require('electron-updater')
 const clientId = '1216217682894913626';
- const DiscordRPC = require('discord-rpc');
- const RPC = new DiscordRPC.Client({ transport: 'ipc'});
- 
- DiscordRPC.register(clientId);
+const DiscordRPC = require('discord-rpc');
+const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 
- async function setActivity() {
-    if (!RPC) return;
-     const newLocal = `link xd`;
-    RPC.setActivity({
-        details: 'By: Bruchita Studios',
-        state: 'Instancia Contersafio 3 ',
-        startTimestamp: Date.now(),
-        largeImageKey: 'https://media.discordapp.net/attachments/1201597666379964579/1216219110950834176/dd_-_copia.jpg?ex=65ff9750&is=65ed2250&hm=e9c8b6089281fe5993234e758084d3e6c6f8dfca2c331befd316917b3f26c650&=&format=webp&width=473&height=473',
-        largeImageText: `Contersafio 3 Launcher`,
-        instance: false,
-        buttons: [
-{
-            }
-        ]
-    });
- };
+DiscordRPC.register(clientId);
+
+async function setActivity() {
+   if (!RPC) return;
+   RPC.setActivity({
+       details: `By: Bruchita Studios`,
+       state: `Iniciando una Aventura!`,
+       startTimestamp: Date.now(),
+       largeImageKey: 'https://media.discordapp.net/attachments/1201597666379964579/1216218288095232011/ruleta.png?ex=65ff968c&is=65ed218c&hm=058e6263c9f7ffdbdab84c89381dc8a42be22f146b328e5c5c3045bf96e0c351&=&format=webp&quality=lossless&width=473&height=473',
+       largeImageText: `Contersafio Launcher`,
+       instance: false,
+       buttons: [
+           {
+               label: `Discord`,
+               url: `https://discord.gg/rVg4Ub9K`,
+           }
+       ]
+   });
+};
 
 RPC.on('ready', async () => {
-    setActivity();
+   setActivity();
 
-    setInterval(() => {
-        setActivity();
-    }, 86400 * 1000);
+   setInterval(() => {
+       setActivity();
+   }, 86400 * 1000);
 });
 
 RPC.login({ clientId }).catch(err => console.error(err));
+const { app, ipcMain, nativeTheme } = require('electron');
+const { Microsoft } = require('minecraft-java-core');
+const { autoUpdater } = require('electron-updater')
 
 const path = require('path');
 const fs = require('fs');

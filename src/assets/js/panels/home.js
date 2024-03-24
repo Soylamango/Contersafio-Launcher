@@ -170,7 +170,7 @@ class Home {
 
             launch.on('patch', patch => {
                 console.log(patch);
-                info.innerHTML = `Patch en cours...`
+                info.innerHTML = `Parche en progreso...`
             });
 
             launch.on('data', (e) => {
@@ -178,7 +178,7 @@ class Home {
                 if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
                 ipcRenderer.send('main-window-progress-reset')
                 progressBar.style.display = "none"
-                info.innerHTML = `Demarrage en cours...`
+                info.innerHTML = `Empezando...`
                 console.log(e);
             })
 
@@ -211,7 +211,7 @@ class Home {
             online.classList.toggle("off");
             playersConnected.textContent = serverPing.playersConnect;
         } else if (serverPing.error) {
-            nameServer.textContent = 'Serveur indisponible';
+            nameServer.textContent = 'Servidor no disponible';
             serverMs.innerHTML = `<span class="red">Hors ligne</span>`;
         }
     }
@@ -227,7 +227,7 @@ class Home {
         let year = date.getFullYear()
         let month = date.getMonth() + 1
         let day = date.getDate()
-        let allMonth = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+        let allMonth = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
         return { year: year, month: allMonth[month - 1], day: day }
     }
 }
